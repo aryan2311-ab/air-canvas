@@ -1,0 +1,1275 @@
+
+/* =====================================================
+   AIR CANVAS — MODERN UI
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+
+    --bg: #060816;
+
+    --panel: rgba(15, 20, 38, 0.72);
+
+    --panel-light: rgba(25, 32, 55, 0.75);
+
+    --border: rgba(255, 255, 255, 0.09);
+
+    --text: #f4f7fb;
+
+    --muted: #8992aa;
+
+    --accent: #66f2b0;
+
+    --accent-dark: #2bbf7c;
+
+    --blue: #6585ff;
+}
+
+
+/* =====================================================
+   BODY
+===================================================== */
+
+body {
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(102, 242, 176, 0.08),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(101, 133, 255, 0.10),
+            transparent 30%
+        ),
+
+        var(--bg);
+
+    color: var(--text);
+
+    font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    padding: 35px 20px;
+}
+
+
+/* =====================================================
+   BACKGROUND GLOW
+===================================================== */
+
+.background-glow {
+
+    position: fixed;
+
+    width: 350px;
+
+    height: 350px;
+
+    border-radius: 50%;
+
+    filter: blur(120px);
+
+    pointer-events: none;
+
+    opacity: 0.12;
+}
+
+.glow-one {
+
+    background: var(--accent);
+
+    top: -150px;
+
+    left: -100px;
+}
+
+.glow-two {
+
+    background: var(--blue);
+
+    right: -150px;
+
+    bottom: 10%;
+}
+
+
+/* =====================================================
+   APP
+===================================================== */
+
+.app {
+
+    width: min(1250px, 100%);
+
+    margin: auto;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.topbar {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 70px;
+}
+
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+}
+
+
+.logo {
+
+    width: 52px;
+    height: 52px;
+
+    flex-shrink: 0;
+
+    border-radius: 15px;
+
+    background-image: url("./logo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    background-color: #060816;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    box-shadow:
+        0 8px 25px rgba(102, 242, 176, 0.15),
+        0 0 25px rgba(101, 133, 255, 0.08);
+
+    font-size: 0;
+
+    overflow: hidden;
+}
+
+
+
+.brand h1 {
+
+    font-size: 19px;
+
+    letter-spacing: -0.4px;
+}
+
+
+.brand p {
+
+    color: var(--muted);
+
+    font-size: 12px;
+
+    margin-top: 2px;
+}
+
+
+.project-badge {
+
+    border: 1px solid var(--border);
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    color: #aab3c9;
+
+    padding: 9px 13px;
+
+    border-radius: 100px;
+
+    font-size: 10px;
+
+    letter-spacing: 1.4px;
+
+    font-weight: 700;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+
+.live-dot {
+
+    width: 7px;
+
+    height: 7px;
+
+    background: var(--accent);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 12px
+        var(--accent);
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+
+    max-width: 790px;
+
+    margin-bottom: 38px;
+}
+
+
+.eyebrow {
+
+    color: var(--accent);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+.hero h2 {
+
+    font-size: clamp(40px, 6vw, 72px);
+
+    line-height: 1.02;
+
+    letter-spacing: -3px;
+
+    margin-top: 12px;
+}
+
+
+.hero h2 span {
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--accent),
+            #79a7ff
+        );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+}
+
+
+.hero p {
+
+    max-width: 620px;
+
+    margin-top: 18px;
+
+    color: var(--muted);
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   PANELS
+===================================================== */
+
+.control-panel,
+.workspace,
+.gesture-section {
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,0.035),
+            rgba(255,255,255,0.015)
+        );
+
+    border: 1px solid var(--border);
+
+    backdrop-filter: blur(20px);
+
+    -webkit-backdrop-filter: blur(20px);
+
+    border-radius: 22px;
+}
+
+
+.control-panel {
+
+    padding: 20px;
+
+    margin-bottom: 14px;
+}
+
+
+.panel-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 17px;
+}
+
+
+.panel-heading h3,
+.workspace-header h3 {
+
+    font-size: 15px;
+
+    letter-spacing: -0.2px;
+}
+
+
+.panel-heading p,
+.workspace-header p {
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    margin-top: 4px;
+}
+
+
+/* =====================================================
+   START BUTTON
+===================================================== */
+
+.start-button {
+
+    border: none;
+
+    border-radius: 12px;
+
+    padding: 11px 18px;
+
+    background: var(--accent);
+
+    color: #06130d;
+
+    font-weight: 800;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.start-button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(102, 242, 176, 0.18);
+}
+
+
+.start-button:disabled {
+
+    opacity: 0.6;
+
+    transform: none;
+
+    box-shadow: none;
+
+    cursor: default;
+}
+
+
+/* =====================================================
+   TOOL GRID
+===================================================== */
+
+.tool-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+}
+
+
+.tool-card {
+
+    min-height: 88px;
+
+    padding: 14px;
+
+    border-radius: 15px;
+
+    background:
+        rgba(255,255,255,0.025);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.055);
+}
+
+
+.tool-label {
+
+    display: block;
+
+    color: #6f7891;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.4px;
+
+    margin-bottom: 11px;
+}
+
+
+/* =====================================================
+   MODE BUTTONS
+===================================================== */
+
+.mode-buttons {
+
+    display: flex;
+
+    gap: 7px;
+}
+
+
+.mode-btn {
+
+    flex: 1;
+
+    border: 1px solid var(--border);
+
+    background: rgba(255,255,255,0.025);
+
+    color: #adb6cb;
+
+    padding: 9px;
+
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    font-size: 11px;
+
+    transition: 0.2s;
+}
+
+
+.mode-btn:hover {
+
+    background:
+        rgba(255,255,255,0.06);
+}
+
+
+.mode-btn.active {
+
+    color: #07140e;
+
+    background: var(--accent);
+
+    border-color: var(--accent);
+
+    font-weight: 800;
+}
+
+
+.mode-btn span {
+
+    margin-right: 4px;
+}
+
+
+/* =====================================================
+   SELECT
+===================================================== */
+
+select {
+
+    width: 100%;
+
+    border: 1px solid var(--border);
+
+    background: #11172a;
+
+    color: white;
+
+    outline: none;
+
+    padding: 10px;
+
+    border-radius: 9px;
+
+    font-size: 11px;
+
+    cursor: pointer;
+}
+
+
+select:focus {
+
+    border-color: var(--accent);
+}
+
+
+/* =====================================================
+   COLOR
+===================================================== */
+
+.color-control {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+#colorPicker {
+
+    width: 40px;
+
+    height: 32px;
+
+    padding: 2px;
+
+    border-radius: 8px;
+
+    border:
+        1px solid
+        var(--border);
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+
+#colorValue {
+
+    font-family:
+        "SFMono-Regular",
+        Consolas,
+        monospace;
+
+    color: #b8c1d4;
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   RANGE
+===================================================== */
+
+.range-control {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+#brushSize {
+
+    flex: 1;
+
+    accent-color: var(--accent);
+
+    cursor: pointer;
+}
+
+
+#brushValue {
+
+    min-width: 28px;
+
+    color: #b8c1d4;
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   FILL TOGGLE
+===================================================== */
+
+.toggle-card {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.toggle-card p {
+
+    color: var(--muted);
+
+    font-size: 10px;
+}
+
+
+.switch {
+
+    position: relative;
+
+    width: 40px;
+
+    height: 22px;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+}
+
+
+.switch input {
+
+    display: none;
+}
+
+
+.slider {
+
+    position: absolute;
+
+    inset: 0;
+
+    background: #293046;
+
+    border-radius: 100px;
+
+    transition: 0.2s;
+
+    cursor: pointer;
+}
+
+
+.slider::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 16px;
+
+    height: 16px;
+
+    left: 3px;
+
+    top: 3px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    transition: 0.2s;
+}
+
+
+.switch input:checked + .slider {
+
+    background: var(--accent-dark);
+}
+
+
+.switch input:checked + .slider::before {
+
+    transform: translateX(18px);
+}
+
+
+/* =====================================================
+   ACTION BUTTONS
+===================================================== */
+
+.action-buttons {
+
+    display: flex;
+
+    gap: 6px;
+}
+
+
+.action-buttons button {
+
+    flex: 1;
+
+    padding: 9px 5px;
+
+    border-radius: 8px;
+
+    border: 1px solid var(--border);
+
+    background: rgba(255,255,255,0.035);
+
+    color: #c4cada;
+
+    font-size: 10px;
+
+    cursor: pointer;
+}
+
+
+.action-buttons button:hover {
+
+    background:
+        rgba(255,255,255,0.08);
+}
+
+
+.action-buttons .save-button {
+
+    background:
+        rgba(102,242,176,0.10);
+
+    border-color:
+        rgba(102,242,176,0.25);
+
+    color: var(--accent);
+}
+
+
+/* =====================================================
+   STATUS ROW
+===================================================== */
+
+.status-row {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 9px;
+
+    margin-bottom: 14px;
+}
+
+
+.status-item {
+
+    min-height: 67px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px;
+
+    border-radius: 14px;
+
+    background:
+        rgba(255,255,255,0.025);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.055);
+}
+
+
+.status-icon {
+
+    width: 31px;
+
+    height: 31px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 9px;
+
+    background:
+        rgba(102,242,176,0.08);
+
+    color: var(--accent);
+
+    font-size: 13px;
+}
+
+
+.status-item small {
+
+    display: block;
+
+    color: #6d768b;
+
+    font-size: 8px;
+
+    letter-spacing: 1.2px;
+
+    font-weight: 800;
+
+    margin-bottom: 4px;
+}
+
+
+.status-item strong {
+
+    font-size: 11px;
+
+    color: #dce2ee;
+}
+
+
+/* =====================================================
+   WORKSPACE
+===================================================== */
+
+.workspace {
+
+    padding: 14px;
+
+    margin-bottom: 14px;
+}
+
+
+.workspace-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        4px 5px 14px;
+}
+
+
+.workspace-status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    font-size: 9px;
+
+    color: var(--accent);
+
+    letter-spacing: 1.4px;
+
+    font-weight: 800;
+}
+
+
+/* =====================================================
+   CANVAS
+===================================================== */
+
+.canvas-container {
+
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+
+    border-radius: 15px;
+
+    background: #020308;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.08);
+}
+
+
+#webcam,
+#drawCanvas,
+#handCanvas {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+#webcam {
+
+    transform: scaleX(-1);
+}
+
+
+#drawCanvas {
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+
+#handCanvas {
+
+    z-index: 3;
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   CAMERA OVERLAY
+===================================================== */
+
+.canvas-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 4;
+
+    display: grid;
+
+    place-items: center;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(6,8,22,0.5),
+            rgba(6,8,22,0.82)
+        );
+}
+
+
+.camera-message {
+
+    max-width: 290px;
+
+    text-align: center;
+
+    padding: 22px;
+}
+
+
+.camera-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    margin: 0 auto 15px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 14px;
+
+    background:
+        rgba(102,242,176,0.09);
+
+    color: var(--accent);
+
+    font-size: 20px;
+
+    border:
+        1px solid
+        rgba(102,242,176,0.15);
+}
+
+
+.camera-message h3 {
+
+    font-size: 16px;
+
+    margin-bottom: 7px;
+}
+
+
+.camera-message p {
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   GESTURE SECTION
+===================================================== */
+
+.gesture-section {
+
+    padding: 22px;
+
+    margin-bottom: 20px;
+}
+
+
+.section-heading {
+
+    margin-bottom: 17px;
+}
+
+
+.section-heading h3 {
+
+    font-size: 20px;
+
+    letter-spacing: -0.6px;
+
+    margin-top: 7px;
+}
+
+
+.gesture-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+}
+
+
+.gesture-card {
+
+    padding: 15px;
+
+    border-radius: 14px;
+
+    background:
+        rgba(255,255,255,0.025);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.055);
+
+    display: flex;
+
+    gap: 12px;
+
+    align-items: flex-start;
+}
+
+
+.gesture-symbol {
+
+    width: 37px;
+
+    height: 37px;
+
+    flex-shrink: 0;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(102,242,176,0.11),
+            rgba(101,133,255,0.11)
+        );
+
+    font-size: 17px;
+}
+
+
+.gesture-card h4 {
+
+    font-size: 11px;
+
+    margin-bottom: 5px;
+}
+
+
+.gesture-card p {
+
+    color: var(--muted);
+
+    font-size: 9px;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #555e74;
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+
+    padding: 4px 3px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .tool-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .gesture-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    body {
+
+        padding: 18px 12px;
+    }
+
+
+    .topbar {
+
+        margin-bottom: 45px;
+    }
+
+
+    .project-badge {
+
+        display: none;
+    }
+
+
+    .hero h2 {
+
+        font-size: 42px;
+
+        letter-spacing: -2px;
+    }
+
+
+    .panel-heading {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .start-button {
+
+        width: 100%;
+    }
+
+
+    .tool-grid,
+    .status-row,
+    .gesture-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .status-row {
+
+        gap: 7px;
+    }
+
+
+    footer {
+
+        flex-direction: column;
+
+        gap: 8px;
+
+        text-align: center;
+    }
+}
+```
